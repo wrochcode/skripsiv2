@@ -14,7 +14,7 @@
                     </button> --}}
                     <a class="navbar-brand" href="index.html">
                         {{-- <img src="assets/images/logo/logo.png" alt="logo"> --}}
-                        <img src="{{URL::asset('images/logo/logo.png')}}" alt="logo">
+                        <img src="{{URL::asset('images/logo/SehatYokk.png')}}" alt="logo">
                     </a>
                 </div><!--/.navbar-header -->
 
