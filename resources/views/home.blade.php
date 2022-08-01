@@ -8,19 +8,15 @@
                     <div class="single-slide-item slide-1">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-8">
                                     <div>
-                                        <h2>Consult Your <br> Business With Us</h2>
-                                        <p>
-                                            We are the unique Consultancy Farm for your business solution, That is ready to take challenge and knockout your business problems. 
-                                        </p>
-                                        <button type="button" class="slide-btn">
-                                        get started
-                                        </button>
-                                        <button type="button"  class="slide-btn">
-                                            explore more
-                                        </button>
-                                        
+                                        <h2>Cari Cara Sehat Terbaik dengan gayamu sendiri</h2>
+                                        <a href="{{ route('masuk') }}"><button type="button"  class="slide-btn">
+                                            Masuk
+                                        </button></a>
+                                        <a href="{{ route('daftar') }}"><button type="button"  class="slide-btn">
+                                            Daftar
+                                        </button></a>
                                     </div><!-- /.single-slide-item-content-->
                                 </div><!-- /.col-->
                             </div><!-- /.row-->

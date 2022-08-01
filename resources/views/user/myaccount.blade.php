@@ -1,124 +1,156 @@
 <x-app-layout title="My Account">
-    <!-- Contact Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="row">
-                    <div class="col-9 mt-5">
-                        <div class="row">
-                            <div class="col-lg-9 text-start ms-4 slideInRight" data-wow-delay="0.1s">
-                                <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-                                    <li class="nav-item me-2">
-                                        <a class="btn btn-outline-primary active" href="{{ route('user.index') }}">Kebutuhan Anda</a>
-                                    </li>
-                                    <li class="nav-item me-2">
-                                        <a class="btn btn-outline-primary" href="{{ route('user.menurec') }}">Menu Rekomendasi</a>
-                                    </li>
-                                    <li class="nav-item me-2">
-                                        <a class="btn btn-outline-primary" href="{{ route('user.menu') }}">Menu Saya</a>
-                                    </li>
-                                    <li class="nav-item me-2">
-                                        <a class="btn btn-outline-primary" href="{{ route('user.weight') }}">Record Berat Badan</a>
-                                    </li>
-                                    {{-- <li class="nav-item me-0">
-                                        <a class="btn btn-outline-primary" href="{{ route('user.profile') }}">Pengaturan</a>
-                                    </li> --}}
-                                </ul>
-                            </div>
-                            <div class="row ms-4 col-lg-9">
-                                <h4>Kebutuhan Tubuh</h4>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Kategori</th>
-                                            <th scope="col">Keterangan</th>
-                                            <th scope="col">Hasil</small></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">BMI</th>
-                                            <td>Berat anda tergolong <b>{{ $kalkulator['descbmi'] }}</b></td>
-                                            <td><b>{{ $kalkulator['bmi'] }} ({{ $kalkulator['descbmi'] }})</b></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">RMR</th>
-                                            <td>Butuh <b>{{ $kalkulator['rmr'] }}</b> Kalori saat istirahat</td>
-                                            <td><b>{{ $kalkulator['rmr'] }} Kcal</b></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">EER</th>
-                                            <td>Butuh <b>{{ $kalkulator['eer'] }}</b> kalori saat maintenance </td>
-                                            <td><b>{{ $kalkulator['eer'] }} Kcal</b></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">TDEE</th>
-                                            <td><b>{{ $kalkulator['tdee'] }}</b> Kalori yang anda bakar</td>
-                                            <td><b>{{ $kalkulator['tdee'] }} Kcal</b></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="row mt-3 ms-4 col-lg-9">
-                                <h4>Kebutuhan Nutrisi</h4>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Nutrisi</th>
-                                            <th scope="col">Kalori (Kcal)</th>
-                                            <th scope="col">Takaran g (<small>gram</small>)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Karbohidrat</th>
-                                            <td>{{ $kalkulator['carb'] }}</td>
-                                            <td>{{ $kalkulator['carbgram'] }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Lemak</th>
-                                            <td>{{ $kalkulator['fat'] }}</td>
-                                            <td>{{ $kalkulator['fatgram'] }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Protein</th>
-                                            <td>{{ $kalkulator['protein'] }}</td>
-                                            <td>{{ $kalkulator['proteingram'] }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Serat</th>
-                                            <td>-</td>
-                                            <td>{{ $kalkulator['serat'] }} gram</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="text-start mt-5 mb-5 fadeInUp" data-wow-delay="0.1s">
-                            <h3 class="mb-1">Biodataku</h3>
-                            @if ($profiluser->gender == "Perempuan")
-                                <img class="img-thumbnail mt-3" src="{{URL::asset('img/woman.png')}}" alt="">
-                                
-                            @else
-                                <img class="img-thumbnail mt-3" src="{{URL::asset('img/men.png')}}" alt="">
+    <!-- header-slider-area start -->
+    <section class="header-slider-area">
+        <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="single-slide-item slide-1">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="single-contact-box">
+                                        <div class="contact-form">
+                                            <h3>Halaman Masuk</h3>
+                                            <form method="POST" action="{{ route('masuk') }}">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <h4><label for="email">Email</label></h4>
+                                                            <input type="text" class="form-control" name="email" value="{{ old('email') }}" id="email" placeholder="Masukkan email anda" autocomplete="off">
+                                                        </div><!--/.form-group-->
+                                                    </div><!--/.col-->
+                                                    <div class="col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <h4><label for="password">Password</label></h4>
+                                                            <input type="password" name="password" class="form-control" id="password" placeholder="Password anda" >
+                                                        </div><!--/.form-group-->
+                                                    </div><!--/.col-->
+                                                </div><!--/.row-->
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="belumpunyaakun">Belum punya akun? <a href="{{ route('daftar') }}">Daftar disini</a>
+                                                            <div class="single-contact-btn pull-right">
+                                                                <button class="contact-btn" type="submit">Masuk</button>
+                                                            </div>
+                                                        </div>
+                                                        <!--/.single-single-contact-btn-->
+                                                    </div><!--/.col-->
+                                                </div><!--/.row-->
+                                            </form><!--/form-->
+                                        </div><!--/.contact-form-->
+                                    </div><!--/.single-contact-box-->
+                                </div><!--/.col-->
+                            </div><!-- /.row-->
+                        </div><!-- /.container-->
+                    </div><!-- /.single-slide-item-->
+                </div><!-- /.item .active-->
+            </div><!-- /.carousel-inner-->
+        </div><!-- /.carousel-->
+    </section><!-- /.header-slider-area-->
+    <!-- header-slider-area end -->
 
-                            @endif
-                            <p class="lh-2 mt-3">{{ Auth::user()->name }} ({{ Auth::user()->username }}) <br><hr>
-                                Umur: {{ $profiluser->age }} tahun <br>
-                                Berat saya: {{ $profiluser->weight }} Kg <br>
-                                {{ $profiluser->gender }} <br>
-                            @php
-                                if($profiluser->weight == 0 || $profiluser->height == 0 ||$profiluser->age == 0){
-                                    echo '<small class="text-danger">*ubah profil anda pada menu pengaturan</small>';
-                                }
-                            @endphp</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+    <!--contact start-->
+    <section  class="contact">
+        <div class="container">
+            <div class="contact-details">
+                <div class="section-header contact-head  text-center">
+                    <h2>contact us</h2>
+                    <p>
+                        Pallamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    </p>
+                </div><!--/.section-header-->
+                <div class="contact-content">
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-5">
+                            <div class="single-contact-box">
+                                <div class="contact-right">
+                                    <div class="contact-adress">
+                                        <div class="contact-office-address">
+                                            <h3>contact info</h3>
+                                            <p>
+                                                125, Park street avenue, Brocklyn, Newyork.
+                                            </p>
+                                            <div class="contact-online-address">
+                                                <div class="single-online-address">
+                                                    <i class="fa fa-phone"></i>
+                                                    +11253678958
+                                                </div><!--/.single-online-address-->
+                                                
+                                                <div class="single-online-address">
+                                                    <i class="fa fa-envelope-o"></i>
+                                                    <span>info@mail.com</span>
+                                                </div><!--/.single-online-address-->
+                                            </div><!--/.contact-online-address-->
+                                        </div><!--/.contact-office-address-->
+                                        <div class="contact-office-address">
+                                            <h3>social partner</h3>
+                                            <div class="contact-icon">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><!--/li-->
+                                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li><!--/li-->
+                                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><!--/li-->
+                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><!--/li-->
+                                                </ul><!--/ul-->
+                                            </div><!--/.contact-icon-->
+                                        </div><!--/.contact-office-address-->
+                                        
+                                    </div><!--/.contact-address-->
+                                </div><!--/.contact-right-->
+                            </div><!--/.single-contact-box-->
+                        </div><!--/.col-->
+                        <div class="col-sm-5">
+                            <div class="single-contact-box">
+                                <div class="contact-form">
+                                    <h3>Leave us a Massage Here</h3>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="firstname" placeholder="First Name" name="firstname">
+                                                </div><!--/.form-group-->
+                                            </div><!--/.col-->
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="laststname">
+                                                </div><!--/.form-group-->
+                                            </div><!--/.col-->
+                                        </div><!--/.row-->
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                                                </div><!--/.form-group-->
+                                            </div><!--/.col-->
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone">
+                                                </div><!--/.form-group-->
+                                            </div><!--/.col-->
+                                        </div><!--/.row-->
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="7" id="comment" placeholder="Message" ></textarea>
+                                                </div><!--/.form-group-->
+                                            </div><!--/.col-->
+                                        </div><!--/.row-->
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="single-contact-btn pull-right">
+                                                    <button class="contact-btn" type="button">send message</button>
+                                                </div><!--/.single-single-contact-btn-->
+                                            </div><!--/.col-->
+                                        </div><!--/.row-->
+                                    </form><!--/form-->
+                                </div><!--/.contact-form-->
+                            </div><!--/.single-contact-box-->
+                        </div><!--/.col-->
+                    </div><!--/.row-->
+                </div><!--/.contact-content-->
+            </div><!--/.contact-details-->
+        </div><!--/.container-->
+
+    </section><!--/.contact-->
 </x-app-layout>
