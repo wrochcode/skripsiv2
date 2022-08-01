@@ -14,7 +14,7 @@
                         </div><!--/.hm-foot-title-->
                         <div class="hm-foot-para">
                             <p>
-                                Lorem ipsum dolor sit amt conetur adcing elit. Sed do eiusod tempor utslr. Ut laboris nisi ut aute irure dolor in rein velit esse.
+                                {{ $company['mission']->value }}
                             </p>
                         </div><!--/.hm-foot-para-->
                         {{-- <div class="hm-foot-icon">

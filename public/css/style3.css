@@ -824,7 +824,7 @@ body {
 --------------------------------------*/
 
 .service {
-    padding: 116px 0 85px;
+    padding: 30px 0 10px;
 }
 
 .service-single {
@@ -1124,12 +1124,17 @@ a:focus.service-btn {
 --------------------------------------*/
 
 .team {
-    padding: 120px 0;
+    padding: 0px 0;
     background: #908ddc;
 }
 
 .team.team-main {
     background: #fff;
+}
+
+.menuku {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 
@@ -1147,7 +1152,7 @@ a:focus.service-btn {
 
 .project-header.team-header.team-head p {
     margin: 0 auto;
-    margin-top: 32px;
+    margin-top: 10px;
 }
 
 
@@ -1158,12 +1163,12 @@ a:focus.service-btn {
 
 .team .team-carousel .col-sm-3,
 .team .team-carousel .col-xs-12 {
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
 }
 
 .team-card {
-    padding: 75px 0 0 0;
+    padding: 10px 0 70px 0;
 }
 
 .team-card.team-mrt-70 {
@@ -1172,7 +1177,9 @@ a:focus.service-btn {
 
 .single-team-box {
     position: relative;
-    height: 352px;
+    margin-bottom: 50px;
+    height: 250px;
+    width: auto;
     background-size: cover;
     background-position: center;
     -webkit-transition: 0.5s ease-in-out;
@@ -1189,19 +1196,19 @@ a:focus.service-btn {
 /*team-box-bg*/
 
 .team-box-bg-1 {
-    background: url(../../assets/images/team/team.jpg) no-repeat;
+    background: url(../images/menu/box1.png);
 }
 
 .team-box-bg-2 {
-    background: url(../../assets/images/team/team3.jpg) no-repeat;
+    background: url(../images/menu/box2.png);
 }
 
 .team-box-bg-3 {
-    background: url(../../assets/images/team/team2.jpg) no-repeat;
+    background: url(../images/menu/box3.png);
 }
 
 .team-box-bg-4 {
-    background: url(../../assets/images/team/team3.jpg) no-repeat;
+    background: url(../images/menu/box4.png);
 }
 
 
@@ -2379,7 +2386,7 @@ a:active.learn-btn {
 
 .blogs-widget {
     position: relative;
-    margin: 0 0 34px 0;
+    margin: 0 0 20px 0;
 }
 
 .blogs-widget h2 {

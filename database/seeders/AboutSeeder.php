@@ -35,6 +35,12 @@ class AboutSeeder extends Seeder
             'keterangan' => '',
             'created_at' => now(),
             'updated_at' => now(),
+        ],[
+            'name' => 'mission',
+            'value' => 'Prioritaskan menu makananmu untuk mempercepat tubuh idealmu.',
+            'keterangan' => '',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]
         ])->each(function($about){
             // About::create($about);

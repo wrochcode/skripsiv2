@@ -25,14 +25,16 @@ class footer extends Component
      */
     public function render()
     {
-        $namecompany = DB::table('abouts')->where('name', 'namecompany')->first();
-        $address = DB::table('abouts')->where('name', 'address')->first();
-        $telp = DB::table('abouts')->where('name', 'telp')->first();
+        $company['namecompany'] = DB::table('abouts')->where('name', 'namecompany')->first();
+        $company['address'] = DB::table('abouts')->where('name', 'address')->first();
+        $company['telp'] = DB::table('abouts')->where('name', 'telp')->first();
+        $company['mission'] = DB::table('abouts')->where('name', 'mission')->first();
+        // dd($mission);
         $navbar = [
             'Beranda' => '/',
             'Kalkulator Sehat' => '/calchealth',
             'Profilku' => '/myaccount',
         ];
-        return view('components.footer', compact('navbar', 'namecompany', 'address', 'telp'));
+        return view('components.footer', compact('navbar', 'company'));
     }
 }
