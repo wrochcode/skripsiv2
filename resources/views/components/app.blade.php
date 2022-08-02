@@ -66,7 +66,17 @@
 
         {{-- fontawesome --}}
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        
+        <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />  
+        <script src="https://kit.fontawesome.com/05e961441f.js" crossorigin="anonymous"></script>
+        <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">  
+        {{-- <style type="text/css">  
+            i{  
+                font-size: 50px !important;  
+                padding: 10px;  
+            }  
+        </style>           --}}
 
     </head>
 	
@@ -128,6 +138,7 @@
         <script type="text/javascript" src="js/custom.js"></script>
         <script src="{{ asset('js/custom.js') }}" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/05e961441f.js" crossorigin="anonymous"></script>
     </body>
 	
 </html>
