@@ -49,7 +49,7 @@
                 <div class="team-card">
                     <div class="container">
                         <p>Buat Menu</p> <br>
-                        <div class="row col-sm-7 ">
+                        <div class="row col-sm-5 ">
                             <form method="post" action="{{ route('user.menustore') }}">
                                 @csrf
                                     <div class="form-group">
@@ -91,8 +91,11 @@
                                                 "Protein: ".$foods[$i]['protein']
                                                 ; 
                                                 @endphp</p>
-                                            <a href="{{ route('usermenurec.detail', $foods[$i]['id']) }}" class="learn-btn">
-                                                View Detail
+                                            <a class="delete-btn  pull-right" href="{{ route('user.menudelete', $foods[$i]['id']) }}">
+                                                Hapus <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('user.menudetail', $foods[$i]['id']) }}" class="learn-btn  pull-right">
+                                                View Detail <i class="fa fa-list" aria-hidden="true"></i>
                                             </a>
                                         </div><!--/.team-box-inner-->
                                     </div><!--/.single-team-box-->

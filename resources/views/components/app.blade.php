@@ -64,6 +64,10 @@
         <link rel="stylesheet" href="assets/css/responsive.css">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
+        {{-- fontawesome --}}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        
+
     </head>
 	
 	<body>
@@ -123,6 +127,7 @@
         <script src="{{ asset('js/jak-menusearch.js') }}" type="text/javascript"></script>
         <script type="text/javascript" src="js/custom.js"></script>
         <script src="{{ asset('js/custom.js') }}" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </body>
 	
 </html>
