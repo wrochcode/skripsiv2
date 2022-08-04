@@ -9,15 +9,27 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <div>
-                                        <h2>Cari Cara Sehat Terbaik dengan gayamu sendiri</h2>
-                                        <a href="{{ route('masuk') }}"><button type="button"  class="slide-btn">
-                                            Masuk
-                                        </button></a>
-                                        <a href="{{ route('daftar') }}"><button type="button"  class="slide-btn">
-                                            Daftar
-                                        </button></a>
-                                    </div><!-- /.single-slide-item-content-->
+                                    @guest
+                                        <div>
+                                            <h2>Cari Cara Sehat Terbaik dengan gayamu sendiri</h2>
+                                            <a href="{{ route('masuk') }}"><button type="button"  class="slide-btn">
+                                                Masuk
+                                            </button></a>
+                                            <a href="{{ route('daftar') }}"><button type="button"  class="slide-btn">
+                                                Daftar
+                                            </button></a>
+                                        </div><!-- /.single-slide-item-content-->
+                                    @else
+                                        <div>
+                                            <h2>Cari Cara Sehat Terbaik dengan gayamu sendiri</h2>
+                                            <a href="{{ route('user.index') }}"><button type="button"  class="slide-btn">
+                                                Lihat Kebutuhanku
+                                            </button></a>
+                                            <a href="{{ route('user.menu') }}"><button type="button"  class="slide-btn">
+                                                Lihat Menu makananku
+                                            </button></a>
+                                        </div><!-- /.single-slide-item-content-->
+                                    @endguest
                                 </div><!-- /.col-->
                             </div><!-- /.row-->
                         </div><!-- /.container-->

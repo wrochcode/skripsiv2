@@ -19,49 +19,48 @@
         <title>revisi</title>
 
         <!-- for title img -->
-		<link rel="shortcut icon" type="image/icon" href="assets/images/logo/favicon.png"/>
+		{{-- <link rel="shortcut icon" type="image/icon" href="assets/images/logo/favicon.png"/> --}}
         <link rel="stylesheet" type="image/icon" href="{{ asset('images/logo/favicon.png') }}">
         
         <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        {{-- <link rel="stylesheet" href="assets/css/font-awesome.min.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 		
 		<!--linear icon css-->
 		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 		
 		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
+        {{-- <link rel="stylesheet" href="assets/css/animate.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 		
 		<!--hover.css-->
-        <link rel="stylesheet" href="assets/css/hover-min.css">
+        {{-- <link rel="stylesheet" href="assets/css/hover-min.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
 		
 		<!--vedio player css-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        {{-- <link rel="stylesheet" href="assets/css/magnific-popup.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
         
 		<!--owl.carousel.css-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        {{-- <link rel="stylesheet" href="assets/css/owl.carousel.min.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-		<link href="assets/css/owl.theme.default.min.css" rel="stylesheet"/>
+		{{-- <link href="assets/css/owl.theme.default.min.css" rel="stylesheet"/> --}}
         <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
         
-        
         <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        {{-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 		
 		<!-- bootsnav -->
-		<link href="assets/css/bootsnav.css" rel="stylesheet"/>	
+		{{-- <link href="assets/css/bootsnav.css" rel="stylesheet"/>	 --}}
         <link rel="stylesheet" href="{{ asset('css/bootsnav.css') }}">
         
         <!--style.css-->
-        <link rel="stylesheet" href="assets/css/style.css">
+        {{-- <link rel="stylesheet" href="assets/css/style.css"> --}}
         <link rel="stylesheet"href="{{ asset('css/style3.css') }}">
         
         <!--responsive.css-->
-        <link rel="stylesheet" href="assets/css/responsive.css">
+        {{-- <link rel="stylesheet" href="assets/css/responsive.css"> --}}
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
         {{-- fontawesome --}}
@@ -94,7 +93,7 @@
 
 		{{-- javascript --}}
 		<!-- jaquery link -->
-		<script src="assets/js/jquery.js"></script>
+		{{-- <script src="assets/js/jquery.js"></script> --}}
         <script src="{{ asset('js/jquery.js') }}" type="text/javascript"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         
@@ -103,39 +102,39 @@
 		
 		
 		<!--bootstrap.min.js-->
-        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        {{-- <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> --}}
         <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
 		
 		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js" type="text/javascript"></script>
+		{{-- <script src="assets/js/bootsnav.js" type="text/javascript"></script> --}}
         <script src="{{ asset('js/bootsnav.js') }}" type="text/javascript"></script>
 		
 		<!-- for manu -->
-		<script src="assets/js/jquery.hc-sticky.min.js" type="text/javascript"></script>
+		{{-- <script src="assets/js/jquery.hc-sticky.min.js" type="text/javascript"></script> --}}
         <script src="{{ asset('js/jquery.hc-sticky.min.js') }}"></script>
 
 		
 		<!-- vedio player js -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
+		{{-- <script src="js/jquery.magnific-popup.min.js"></script> --}}
         <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 
 
 		<script type="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
         <!--owl.carousel.js-->
-        <script type="javascript" src="assets/js/owl.carousel.min.js"></script>
+        {{-- <script type="javascript" src="assets/js/owl.carousel.min.js"></script> --}}
         <script src="{{ asset('js/owl.carousel.min.js') }}" type="text/javascript"></script>
 		
 		<!-- counter js -->
-		<script src="js/jquery.counterup.min.js"></script>
+		{{-- <script src="js/jquery.counterup.min.js"></script> --}}
         <script src="{{ asset('js/jquery.counterup.min.js') }}" type="text/javascript"></script>
-		<script src="js/waypoints.min.js"></script>
+		{{-- <script src="js/waypoints.min.js"></script> --}}
         <script src="{{ asset('js/waypoints.min.js') }}" type="text/javascript"></script>
 		
         <!--Custom JS-->
-        <script type="text/javascript" src="js/jak-menusearch.js"></script>
+        {{-- <script type="text/javascript" src="js/jak-menusearch.js"></script> --}}
         <script src="{{ asset('js/jak-menusearch.js') }}" type="text/javascript"></script>
-        <script type="text/javascript" src="js/custom.js"></script>
+        {{-- <script type="text/javascript" src="js/custom.js"></script> --}}
         <script src="{{ asset('js/custom.js') }}" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/05e961441f.js" crossorigin="anonymous"></script>
