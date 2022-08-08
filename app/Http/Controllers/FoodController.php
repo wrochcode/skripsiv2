@@ -13,15 +13,13 @@ class FoodController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
-    {
+    public function index(){
         return view('admin.food', [
             'foods' => Food::all(),
         ]);
     }
 
-    public function create()
-    {
+    public function create(){
         //
     }
     

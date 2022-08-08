@@ -119,6 +119,7 @@ Route::middleware('auth')->group(function(){
     Route::get('foodmenu/{id}/edit', [FoodMenuController::class, 'edit'])->name('foodmenu.edit');
     Route::put('foodmenu/{id}', [FoodMenuController::class, 'update'])->name('foodmenu.update');
     Route::get('foodmenudelete/{id}', [FoodMenuController::class, 'destroy'])->name('foodmenu.destroy');
+    Route::get('mymenuhapus/{id}', [FoodMenuController::class, 'hapusitem'])->name('user.itemhapus');
     Route::delete('foodmenu/{id}', [FoodMenuController::class, 'hapus'])->name('foodmenu.hapusitem');
     
     // food menu rec user

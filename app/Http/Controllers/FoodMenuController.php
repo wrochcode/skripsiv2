@@ -440,6 +440,7 @@ class FoodMenuController extends Controller
         // Food::create($request->all());
         return redirect()->route('foodmenu.detail', ['id' => $request->idmenu])->with('success', 'Data berhasil ditambahkan.');
     }
+
     public function add(Request $request){
         // dd($request->iditem);
         $id = $request->iditem;
@@ -465,6 +466,13 @@ class FoodMenuController extends Controller
         ]);
     }
 
+    public function hapusitem($id){
+        $menu = Itemsfoodmenu::find($id);
+        // dd($menu->name);
+        Itemsfoodmenu::find($id)->delete();
+        return back()->with('danger', $menu->name." berhasil dihapus");
+    }
+    
     public function destroy($id){
         // dd($id);
         Foodsmenu::find($id)->delete();

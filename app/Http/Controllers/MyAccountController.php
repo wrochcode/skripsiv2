@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class MyAccountController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
 
@@ -814,6 +813,19 @@ class MyAccountController extends Controller
             $gender = "null";
         }
 
+        if($user->planing == 1){
+            $planing = 'Menurunkan berat badan';
+            $user->planing = $planing;
+        }
+        elseif($user->planing == 2){
+            $planing = 'Mempertahankan berat badan';
+            $user->planing = $planing;
+        }
+        elseif($user->planing == 3){
+            $planing = 'Tambah berat badan';
+            $user->planing = $planing;
+        }
+
         // dd($user);
         return view('user.myprofile',[
             'namecompany' => $namecompany,
@@ -840,9 +852,18 @@ class MyAccountController extends Controller
             'email'=> $request->email,
             'address'=> $request->address,
         ]);
+
+        if($request->planing == 'Menurunkan berat badan' ){
+            $request->planing = 1;
+        }elseif($request->planing == 'Mempertahankan berat badan' ){
+            $request->planing = 2;
+        }elseif($request->planing == 'Tambah berat badan' ){
+            $request->planing = 3;
+        }
+
         ProfilUserModel::find($user->id)->update([
             'id_user'=> $user->id,
-            'planing'=> 1,
+            'planing'=> $request->planing,
             'age'=> $request->age,
             'gender'=> $request->gender,
             'weight'=> $request->weight,
@@ -927,8 +948,19 @@ class MyAccountController extends Controller
 
         // Menentukan maksimal -> butuh data
         $Foods = Foodsmenu::all();
-
-        $point = DB::table('criterias')->where('name', 'Defisit')->first();
+        // dd($user->planing);
+        if($user->planing == 1){
+            $planing = 'Defisit';
+        }
+        elseif($user->planing == 2){
+            $planing = 'Maintenance';
+        }
+        elseif($user->planing == 3){
+            $planing = 'Surplus';
+        }
+        
+        $point = DB::table('criterias')->where('name', $planing)->first();
+        // dd($point);
         $metode = $point->name;
         $poincriteria [1] = 'Kalori: '. strval($point->calorie);
         $poincriteria [2] = ', Lemak: '. strval($point->fat);
@@ -943,9 +975,9 @@ class MyAccountController extends Controller
             }
         }
         $trec = $alternatif;
-        if($trec>5){
-            $trec=5;
-        }
+        // if($trec>5){
+        //     $trec=5;
+        // }
 
         // dd($alternatif);
         if($alternatif<1){
@@ -974,6 +1006,7 @@ class MyAccountController extends Controller
                 $alternatif++;
             }
         }
+        // dd($makananuser);
         
         // ALgorithma start cari max
         $max1 = $makananuser[0]['calorie'];
@@ -1001,7 +1034,7 @@ class MyAccountController extends Controller
 
         //Normalisasi
         $alternatif = 0;
-        $criteria = DB::table('criterias')->where('name', 'Defisit')->first();
+        $criteria = DB::table('criterias')->where('name', $planing)->first();
         $c1 = $criteria->calorie;
         $c2 = $criteria->carb;
         $c3 = $criteria->fat;

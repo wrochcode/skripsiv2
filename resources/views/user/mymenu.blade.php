@@ -44,6 +44,9 @@
                         </div>
                         <br>
                         <div class="row">
+                            <div class="col-lg-8 blogs-widget">
+                                <a href="{{ route('user.sawmetode') }}" style="background-color: rgb(75, 231, 255); color: rgb(162, 21, 21)" class="btn btn-default">Urutkan Rekomendasi dengan Algoritma SAW <i class="fa fa-calculator" aria-hidden="true"></i></a>
+                            </div>
                             <?php $indexloop = 1 ;?>
                             <div class="col-lg-8 col-xs-12 menuku">Menu Saya:</div> <br>
                             @for ($i = 0 ; $i  < $trec; $i++)

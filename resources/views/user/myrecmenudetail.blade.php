@@ -1,3 +1,133 @@
+<x-app-layout title="My Menu Detail">
+    <!--service start-->
+	<section  class="service">
+        <div class="container">
+            <div class="service-details">
+                <div class="section-header text-center">
+                    <h2>Kebutuhanku</h2>
+                    <p class="lh-2 mt-3">{{ Auth::user()->name }} ({{ Auth::user()->username }}) <br>
+                        Umur: {{ $profiluser->age }} tahun, Berat saya: {{ $profiluser->weight }} Kg, {{ $profiluser->gender }} <br>
+                    @php
+                        if($profiluser->weight == 0 || $profiluser->height == 0 ||$profiluser->age == 0){
+                            echo '<small class="text-danger">*ubah profil anda pada menu pengaturan</small>';
+                        }
+                    @endphp</p>
+                </div><!--/.section-header-->
+            </div><!--/.service-details-->
+        </div><!--/.container-->
+    </section><!--/.service-->
+    <!--service end-->
+
+    <x-subnavbar></x-subnavbar>
+
+    <!--team start -->
+    <section id="team" class="team  team-main">
+        <div class="container">
+            <div class="team-details">
+                <div class="team-card">
+                    <div class="container " style="margin-top: 20px">
+                        <div class="row col-sm-9">
+                            <div class="card mb-4 ms-4 col-md-11">
+                                <div class="card-header">
+                                    <i class="fas fa-table me-1"></i> Data Makanan
+                                </div>
+                                <div class="card-body">
+                                    <table id="datatablesSimple">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Calorie</th>
+                                                <th>Karbohidrat</th>
+                                                <th>Lemak</th>
+                                                <th>Protein</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Calorie</th>
+                                                <th>Karbohidrat</th>
+                                                <th>Lemak</th>
+                                                <th>Protein</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <?php $no= 1 ; $tkalori = 0;?>
+                                                @for ($i=0 ; $i<count($foods) ; $i++ )
+                                                    <tr>
+                                                    <td>{{ $no }}</td>
+                                                        <?php $no++;?>
+                                                        <td><?php echo $foods[$i]['name']; ?></td>
+                                                        <td><?php echo $foods[$i]['calorie']; $tkalori +=$foods[$i]['calorie']; ?></td>
+                                                        <td><?php echo $foods[$i]['carb']; ?></td>
+                                                        <td><?php echo $foods[$i]['fat']; ?></td>
+                                                        <td><?php echo $foods[$i]['protein']; ?></td>
+                                                    </tr>
+                                                @endfor
+                                                <p>Total Kalori @php
+                                                    echo $tkalori;
+                                                @endphp Kcal</p>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            {{-- @if ($trec<1)
+                                Kosong
+                            @else
+                                <?php $indexloop = 1 ;?>
+                                <div class="col-lg-8 col-xs-12 menuku">Makanan Saya:</div> <br>
+                                
+                                @for ($i = 0 ; $i  < $trec; $i++)
+                                <div class="col-lg-8 col-xs-12">
+                                    @if ($indexloop == 1)
+                                        <div class="single-team-box single-team-card team-box-bg-1">
+                                    @elseif ($indexloop == 2)    
+                                        <div class="single-team-box single-team-card team-box-bg-2">
+                                    @elseif ($indexloop == 3)    
+                                        <div class="single-team-box single-team-card team-box-bg-3">
+                                    @elseif ($indexloop == 4)    
+                                        <div class="single-team-box single-team-card team-box-bg-4">
+                                        @php
+                                            $indexloop = 0;
+                                        @endphp
+                                    @endif
+                                            <div class="team-box-inner">
+                                                <h3>@php echo $foods[$i]['name'] @endphp</h3>
+                                                <p class="team-meta">@php echo 
+                                                    "Kalori: ".$foods[$i]['calorie']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
+                                                    "Karbohidrat: ".$foods[$i]['carb']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
+                                                    "Lemak: ".$foods[$i]['fat']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
+                                                    "Protein: ".$foods[$i]['protein']
+                                                    ; 
+                                                    @endphp</p>
+                                                <?php $id = $foods[$i]['id']; ?>
+                                                <form action="{{ route('foodmenu.hapusitem', $id) }}" method="POST">
+                                                    @csrf
+                                                    @method("delete")
+                                                    <button type="submit" class="delete-btn  pull-right">Hapus</button>
+                                                </form>
+                                                <a href="{{ route('user.menudetail', $foods[$i]['id']) }}" class="learn-btn  pull-right">
+                                                    View Detail <i class="fa fa-list" aria-hidden="true"></i>
+                                                </a>
+                                            </div><!--/.team-box-inner-->
+                                        </div><!--/.single-team-box-->
+                                    @php $indexloop++; @endphp
+                                @endfor
+                                </div><!--.col-->
+                            @endif --}}
+                        </div><!--/.row-->
+                    </div>
+                </div><!--/.team-card-->
+            </div><!--/.team-details-->
+        </div><!--/.container-->
+        
+    </section><!--/.team-->
+    <!--team end-->
+    
+</x-app-layout>
+
 <x-app-layout title="Recomend Menu Detail">
     <!-- Contact Start -->
     <div class="container-xxl py-5">
