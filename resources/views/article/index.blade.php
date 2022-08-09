@@ -1,24 +1,4 @@
-<x-app-layout title="My Menu">
-    {{-- <!--service start-->
-	<section  class="service">
-        <div class="container">
-            <div class="service-details">
-                <div class="section-header text-center">
-                    <h2>Kebutuhanku</h2>
-                    <p class="lh-2 mt-3">{{ Auth::user()->name }} ({{ Auth::user()->username }}) <br>
-                        Umur: {{ $profiluser->age }} tahun, Berat saya: {{ $profiluser->weight }} Kg, {{ $profiluser->gender }} <br>
-                    @php
-                        if($profiluser->weight == 0 || $profiluser->height == 0 ||$profiluser->age == 0){
-                            echo '<small class="text-danger">*ubah profil anda pada menu pengaturan</small>';
-                        }
-                    @endphp</p>
-                </div><!--/.section-header-->
-            </div><!--/.service-details-->
-        </div><!--/.container-->
-    </section><!--/.service-->
-    <!--service end--> --}}
-
-    <x-subnavbar></x-subnavbar>
+<x-app-layout title="Artikel">
 
     <!--nwes start -->
     <section class="news">
@@ -41,7 +21,7 @@
                                         <div class="news-box-bg">
                                             <img src="{{URL::asset('images/blog/bl2.jpg')}}" alt="blog image">
                                             <div class="isotope-overlay">
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
                                                     <span class="lnr lnr-link"></span>
 
                                                 </a>
@@ -50,7 +30,7 @@
                                         <!--/.team-box-bg-->
                                         <div class="news-box-inner">
                                             <h3>
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
 														The Pros and Cons of Starting an Online Consulting Business
 													</a>
                                             </h3>
@@ -69,7 +49,7 @@
                                             {{-- <img src="assets/images/blog/bl1.jpg" alt="blog image"> --}}
                                             <img src="{{URL::asset('images/blog/bl1.jpg')}}" alt="blog image">
                                             <div class="isotope-overlay">
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
                                                     <span class="lnr lnr-link"></span>
 
                                                 </a>
@@ -79,7 +59,7 @@
                                         <!--/.team-box-bg-->
                                         <div class="news-box-inner">
                                             <h3>
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
 														The Pros and Cons of Starting an Online Consulting Business
 													</a>
                                             </h3>
@@ -97,8 +77,12 @@
                                         <div class="news-box-bg">
                                             <img src="{{URL::asset('images/blog/bl4.jpg')}}" alt="blog image">
                                             <div class="isotope-overlay">
-                                                <a href="https://www.youtube.com/watch?v=kr2aGgcrQjc&t=1s" class="vedio-play-icon mfp-iframe">
+                                                {{-- <a href="https://www.youtube.com/watch?v=kr2aGgcrQjc&t=1s" class="vedio-play-icon mfp-iframe">
                                                     <img src="assets/images/blog/play-icon.png" alt="play-icon">
+                                                </a> --}}
+                                                <a href="{{ route('article.detail') }}">
+                                                    <span class="lnr lnr-link"></span>
+
                                                 </a>
                                             </div>
 
@@ -106,7 +90,7 @@
                                         <!--/.news-box-bg-->
                                         <div class="news-box-inner">
                                             <h3>
-                                                <a href="#">
+                                                <a href="{{ route('article.detail') }}">
 														The Pros and Cons of Starting an Online Consulting Business
 													</a>
                                             </h3>
@@ -127,7 +111,7 @@
                                         <div class="news-box-bg">
                                             <img src="{{URL::asset('images/blog/bl3.jpg')}}" alt="blog image">
                                             <div class="isotope-overlay">
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
                                                     <span class="lnr lnr-link"></span>
 
                                                 </a>
@@ -137,7 +121,7 @@
                                         <!--/.team-box-bg-->
                                         <div class="news-box-inner">
                                             <h3>
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
 														The Pros and Cons of Starting an Online Consulting Business
 													</a>
                                             </h3>
@@ -155,7 +139,7 @@
                                         <div class="news-box-bg">
                                             <img src="{{URL::asset('images/blog/bl5.jpg')}}" alt="blog image">
                                             <div class="isotope-overlay">
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
                                                     <span class="lnr lnr-link"></span>
 
                                                 </a>
@@ -165,7 +149,7 @@
                                         <!--/.team-box-bg-->
                                         <div class="news-box-inner">
                                             <h3>
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
 														The Pros and Cons of Starting an Online Consulting Business
 													</a>
                                             </h3>
@@ -183,7 +167,7 @@
                                         <div class="news-box-bg">
                                             <img src="{{URL::asset('images/blog/bl6.jpg')}}" alt="blog image">
                                             <div class="isotope-overlay">
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
                                                     <span class="lnr lnr-link"></span>
 
                                                 </a>
@@ -193,7 +177,7 @@
                                         <!--/.team-box-bg-->
                                         <div class="news-box-inner">
                                             <h3>
-                                                <a href="blog_single.html">
+                                                <a href="{{ route('article.detail') }}">
 														The Pros and Cons of Starting an Online Consulting Business
 													</a>
                                             </h3>

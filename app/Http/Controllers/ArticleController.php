@@ -11,4 +11,9 @@ class ArticleController extends Controller
         $pages = 'Produk';
         return view('article.index', ['pages' => $pages]);
     }
+    public function detail()
+    {
+        $pages = 'Produk';
+        return view('article.detail', ['pages' => $pages]);
+    }
 }

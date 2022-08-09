@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class);
 Route::get('about', [AboutController::class, 'index'])->name('about.index');
 Route::resource('article', ArticleController::class);
+Route::get('articledetail', [ArticleController::class, 'detail'])->name('article.detail');
 // Route::resource('recomendation', RecomendationController::class);
 Route::get('calchealth', [CalcController::class, 'index'])->name('calchealth');
 
