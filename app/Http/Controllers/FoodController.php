@@ -24,6 +24,18 @@ class FoodController extends Controller
     }
     
     public function store(Request $request){
+        if($request->calorie == 0){
+            $request->calorie = 0.0;
+        }
+        if($request->carb == 0){
+            $request->carb = 0.0;
+        }
+        if($request->fat == 0){
+            $request->fat = 0.0;
+        }
+        if($request->protein == 0){
+            $request->protein = 0.0;
+        }
         Food::create([
                 'name'=> $request->name,
                 'calorie'=> $request->calorie,
@@ -43,6 +55,7 @@ class FoodController extends Controller
     }
     
     public function update(Request $request, $id){
+        // dd($id);
         Food::find($id)->update([
             'name'=> $request->name,
             'calorie'=> $request->calorie,

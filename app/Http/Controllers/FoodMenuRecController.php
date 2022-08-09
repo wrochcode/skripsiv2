@@ -53,6 +53,7 @@ class FoodMenuRecController extends Controller
             ]);
         }
 
+        $trec = $alternatif;
         $alternatif = 0;
         // dd($Foods);
         foreach($Foods as $Food){
@@ -151,9 +152,9 @@ class FoodMenuRecController extends Controller
                 }
             }
         }
-        if($trec>5){
-            $trec = 5;
-        }
+        // if($trec>5){
+        //     $trec = 5;
+        // }
         
         // dd($makananuser);
         return view('admin.mainmenurec', [
@@ -187,9 +188,7 @@ class FoodMenuRecController extends Controller
             $alternatif++;
         }
         $trec = $alternatif;
-        if($trec>5){
-            $trec=5;
-        }
+        
 
         // dd($alternatif);
         if($alternatif<1){
@@ -316,6 +315,18 @@ class FoodMenuRecController extends Controller
     }
     
     public function create(Request $request){
+        if($request->calorie == 0){
+            $request->calorie = 0.0;
+        }
+        if($request->carb == 0){
+            $request->carb = 0.0;
+        }
+        if($request->fat == 0){
+            $request->fat = 0.0;
+        }
+        if($request->fat == 0){
+            $request->fat = 0.0;
+        }
         FoodMenuRecModel::create([
             'name'=> $request->name,
             'calorie'=> $request->calorie,
@@ -438,7 +449,7 @@ class FoodMenuRecController extends Controller
         FoodMenuRecModel::find($id)->delete();
         // $food = DB::table('foodsmenu')->where('id', $id)->first();
 
-        return  redirect('foodmenu');
+        return  back()->with('danger', "data berhasil dihapus");
     }
 
     public function hapus($id){

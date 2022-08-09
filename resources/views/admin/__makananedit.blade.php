@@ -16,7 +16,7 @@
                     @endif
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('foodrecomend.update', $food->id)  }}" style="margin-bottom: 20px" method="post">
+                        <form action="{{ route('food.update', $food->id)  }}" style="margin-bottom: 20px" method="post">
                             @csrf
                             @method('put')
                             <div class="row mb-3">

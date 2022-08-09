@@ -93,35 +93,20 @@
                         ?>        
                         @for ($i = 0 ; $i  < $trec; $i++)    
                             <div class="col-xl-12 col-md-6">
-                                @if ($indexloop == 1)
                                 <div class="card bg-primary text-white mb-4">
-                                @elseif ($indexloop == 2)    
-                                <div class="card bg-success text-white mb-4">
-                                @elseif ($indexloop == 3)    
-                                <div class="card bg-warning text-white mb-4">
-                                @elseif ($indexloop == 4)    
-                                <div class="card bg-danger text-white mb-4">
-                                @php
-                                    $index == -1;
-                                @endphp
-                                @endif
-                                        <div class="card-header">Menu @php echo $foods[$i]['name'] @endphp</div>
-                                        <div class="card-body">@php echo 
-                                                                "Kalori: ".$foods[$i]['calorie']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
-                                                                "Karbohidrat: ".$foods[$i]['carb']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
-                                                                "Lemak: ".$foods[$i]['fat']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
-                                                                "Protein: ".$foods[$i]['protein']
-                                                                ; 
-                                                                @endphp</div>
-                                        <div class="card-footer d-flex align-items-center justify-content-between">
-                                            <a class="small text-white" href="{{ route('foodmenurec.detail', $foods[$i]['id']) }}">View Details <i class="fas fa-angle-right"></i></a>
-                                            <a class="btn btn-danger" href="{{ route('foodmenurec.destroy', $foods[$i]['id']) }}">Hapus <i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                                    <div class="card-header">Menu @php echo $foods[$i]['name'] @endphp</div>
+                                    <div class="card-body">@php echo 
+                                                            "Kalori: ".$foods[$i]['calorie']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
+                                                            "Karbohidrat: ".$foods[$i]['carb']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
+                                                            "Lemak: ".$foods[$i]['fat']."&nbsp"."&nbsp"."&nbsp"."&nbsp".
+                                                            "Protein: ".$foods[$i]['protein']
+                                                            ; 
+                                                            @endphp</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white" href="{{ route('foodmenurec.detail', $foods[$i]['id']) }}">View Details <i class="fas fa-angle-right"></i></a>
+                                        <a class="btn btn-danger" href="{{ route('foodmenurec.destroy', $foods[$i]['id']) }}">Hapus <i class="fa fa-trash" aria-hidden="true"></i></button></a>
                                     </div>
                                 </div>
-                                @php
-                                    // echo $indexloop;
-                                    $indexloop++;
-                                @endphp
                             </div>
                         @endfor
                     </div>
@@ -138,6 +123,5 @@
                     </div>
                 </div>
             </footer>
-        </div>
     </div>
 </x-app-admin>

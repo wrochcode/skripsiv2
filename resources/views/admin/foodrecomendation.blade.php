@@ -97,9 +97,6 @@
                         </div>
                         @if (isset($recs))
                         <div class="row mb-3">
-                                
-                            
-                              
                             <?php $number = 1; ?>
                             @for ($i= 0 ;$i<$trec;$i++)
                                 <div class="col-md-3 mt-2">
@@ -183,5 +180,4 @@
                 </div>
             </div>
         </footer>
-    </div>
 </x-app-admin>
