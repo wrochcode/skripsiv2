@@ -316,23 +316,35 @@ class FoodMenuRecController extends Controller
     
     public function create(Request $request){
         if($request->calorie == 0){
-            $request->calorie = 0.0;
+            $calorie = 0.0;
+        }
+        else{
+            $calorie = $request->calorie;
         }
         if($request->carb == 0){
-            $request->carb = 0.0;
+            $carb = 0.0;
+        }
+        else{
+            $carb = $request->carb;
         }
         if($request->fat == 0){
-            $request->fat = 0.0;
+            $fat = 0.0;
         }
-        if($request->fat == 0){
-            $request->fat = 0.0;
+        else{
+            $fat = $request->fat;
+        }
+        if($request->protein == 0){
+            $protein = 0.0;
+        }
+        else{
+            $protein = $request->protein;
         }
         FoodMenuRecModel::create([
             'name'=> $request->name,
-            'calorie'=> $request->calorie,
-            'carb'=> $request->carb,
-            'fat'=> $request->fat,
-            'protein'=> $request->protein,
+            'calorie'=> $calorie,
+            'carb'=> $carb,
+            'fat'=> $fat,
+            'protein'=> $protein,
         ]);
         return  redirect('foodmenurec')->with('success', 'Data berhasil dibuat.');
     }
